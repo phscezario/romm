@@ -379,7 +379,7 @@ class DBRomsHandler(DBBaseHandler):
         self,
         query: Query,
         platform_id: int | None = None,
-        fs_slug: str | None = None,
+        platform_fs_slug: str | None = None,
         collection_id: int | None = None,
         virtual_collection_id: str | None = None,
         smart_collection_id: int | None = None,
@@ -408,8 +408,8 @@ class DBRomsHandler(DBBaseHandler):
         if platform_id:
             query = self.filter_by_platform_id(query, platform_id)
 
-        if fs_slug:
-            query = self.filter_by_platform_fs_slug(query, fs_slug)
+        if platform_fs_slug:
+            query = self.filter_by_platform_fs_slug(query, platform_fs_slug)
 
         if collection_id:
             query = self.filter_by_collection_id(query, session, collection_id)
